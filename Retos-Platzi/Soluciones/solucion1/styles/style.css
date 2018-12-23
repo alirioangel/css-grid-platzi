@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  font-family: 'lato', sans-serif;
+}
+figure {
+  margin: 0;
+}
+/* CODIGO PARA EL NAVBAR*/
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-items: center;
+  grid-template-areas: 'logo search user';
+  box-shadow: 10px 10px 5px #a2a2a2;
+}
+.navbar-brand {
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  max-width: 50px;
+}
+.logo img {
+  max-width: 100%;
+}
+.navbar-brand h1 {
+  margin: 0;
+  color: white;
+  -webkit-text-stroke: 1px #fd6766;
+}
+.navbar-search {
+  margin: 0;
+  width: 100%;
+  grid-area: search;
+  padding: 20px 0px;
+  text-align: center;
+}
+.navbar-search input {
+  width: 90%;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #a8a6b2;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.navbar-user {
+  grid-area: user;
+  display: flex;
+  align-items: center;
+}
+.user-image {
+  margin-left: 5px;
+  max-width: 50px;
+}
+.user-image img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+/*FIN DEL CODIGO PARA EL NAVBAR*/
+/*CODIGO PARA EL MENU*/
+.main {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-areas: 'menu peliculas';
+}
+
+.menu {
+  min-width: 100px;
+  max-width: 150px;
+  grid-area: menu;
+  min-height: 100vh;
+  background: #fd6766;
+  display: grid;
+  grid-template-rows: 70vh 1fr;
+}
+.menu-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.menu-items li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+.menu-items li {
+  margin: 30px 0px;
+}
+.menu-items li i {
+  display: block;
+  font-size: 33px;
+  margin-bottom: 5px;
+}
+
+.menu-settings {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.menu-settings li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+.menu-settings li {
+  margin: 30px 0px;
+}
+.menu-settings li i {
+  display: block;
+  font-size: 33px;
+  margin-bottom: 5px;
+}
+/*FIN DEL CODIGO PARA EL MENU*/
+/*CODIGO PARA EL CONTAINER*/
+.container {
+  grid-area: peliculas;
+}
+.peliculas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  padding: 30px;
+}
+.title {
+  margin: 0;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 0;
+  font-weight: normal;
+}
+.pelicula {
+  position: relative;
+  color: white;
+  transition: 0.3s;
+  overflow: hidden;
+}
+.pelicula figure {
+  max-width: 100%;
+  vertical-align: top;
+}
+.pelicula figure img {
+  width: 100%;
+}
+.overlay {
+  background: rgba(253, 103, 102, 0.72941);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: white;
+  padding: 0.5em;
+  height: 50%;
+  transition: 0.3s;
+}
+.movie-title {
+  margin: 0 0 0.5em;
+}
+.movie-description {
+  margin: 0;
+  font-weight: 300;
+}
+.pelicula:hover .overlay {
+  height: 100%;
+  padding: 0 0.5em;
+}
+.pelicula:hover .title {
+  padding-top: 1em;
+}
+
+/*FIN DEL CODIGO PARA EL CONTAINER*/
+@media screen and (max-width: 1167px) {
+  .peliculas {
+    grid-gap: 5px;
+    padding: 20px;
+  }
+  .overlay {
+    height: 10%;
+  }
+}
+@media screen and (max-width: 910px) {
+  .peliculas {
+    grid-gap: 5px;
+    padding: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .peliculas {
+    grid-template-columns: 1fr;
+  }
+
+  .overlay {
+    height: 50%;
+  }
+}
