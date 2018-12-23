@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Grid-Implicito</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0 auto;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: [inicio] 1fr [linea2] 1fr [linea3] 1fr [destacadoEnd] 1fr [linea5] 1fr [destacado2End] 1fr [linea7] 1fr [final];
+        grid-template-rows: [inicio] 60% [bannerEnd] 1fr [destacado3End] 1fr [final];
+        height: 100vh;
+        grid-gap: 5px;
+        /* grid-auto-flow: row;*/
+        /* grid-auto-flow: column;*/
+        /* grid-auto-columns: 50px 100px;*/
+        /* grid-auto-rows: 50px 100px;*/
+      }
+
+      .item {
+        background: lightblue;
+        padding: 10px;
+        border: 1px solid red;
+      }
+
+      .item:nth-of-type(1) {
+        grid-column: inicio / final;
+        grid-row: inicio / bannerEnd;
+      }
+      .item:nth-of-type(2) {
+        grid-column: inicio / destacadoEnd;
+        grid-row: bannerEnd / final;
+      }
+      .item:nth-of-type(3) {
+        grid-column: destacadoEnd / destacado2End;
+        grid-row: bannerEnd / final;
+      }
+      .item:nth-of-type(4) {
+        grid-column: destacado2End / final;
+        grid-row: bannerEnd / destacado3End;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Clase para Entender el uso de Css Grid  -->
+    <section class="container">
+      <div class="item">item #1</div>
+      <div class="item">item #2</div>
+      <div class="item">item #3</div>
+      <div class="item">item #4</div>
+      <div class="item">item #5</div>
+      <div class="item">item #6</div>
+    </section>
+  </body>
+</html>

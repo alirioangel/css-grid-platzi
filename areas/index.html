@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Funciones</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0 auto;
+      }
+
+      .container {
+        display: grid;
+        /* grid-template-columns: 25% 50% 25%;
+            grid-template-rows: 300px 300px;*/
+        /* grid-template: filas / columnas */
+        /* Unidad de Medida Las Fracciones : fr*/
+        /* 
+            grid-template: 200px 100px 100px / 1fr 1fr 1fr;
+            Ahora CSS trae Funciones por lo que podemos usar Repeat(Numero de veces , medida )
+            a su vez puedes introducir en el segundo campo otra funcion minmax(medidaMinima, medida)
+            */
+        grid-template: 100px 1fr 70px / 200px 1fr;
+        /* grid-column-gap: 30px;
+            grid-row-gap: 30px; */
+        /* grid-gap : filas columnas */
+        grid-gap: 10px 25px;
+        height: 100vh;
+        grid-template-areas:
+          'header header'
+          'left contenido'
+          'footer footer';
+      }
+
+      .item {
+        background: lightblue;
+        padding: 10px;
+        border: 1px solid red;
+      }
+
+      .header {
+        grid-area: header;
+      }
+
+      .left {
+        grid-area: left;
+      }
+
+      .footer {
+        grid-area: footer;
+      }
+
+      .contenido {
+        grid-area: contenido;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Clase para Entender el uso de Css Grid  -->
+    <section class="container">
+      <div class="item header">header</div>
+      <div class="item left">left</div>
+      <div class="item contenido">contenido</div>
+      <div class="item footer">footer</div>
+    </section>
+  </body>
+</html>
